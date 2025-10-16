@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KARAK — See beyond the threats</title>
+  <meta name="description" content="KARAK — Cyber Security services: penetration testing, audits, 24/7 monitoring and AI assistant." />
+  <meta property="og:title" content="KARAK — See beyond the threats" />
+  <meta property="og:description" content="Modern cyber security solutions for SMEs. Pen tests, audits, monitoring and incident response." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="karak-logo.png" />
+  <meta property="og:image" content="karak-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ====== Variables ====== */
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1720;
+      --red:#D62828;
+      --blue:#0A74FF;
+      --silver:#BFC7CC;
+      --muted: #98a2b3;
+      --radius:12px;
+      --maxw:1100px;
+    }
+    /* ====== Reset & Base ====== */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:linear-gradient(180deg,#071021 0%, #05101a 100%);color:#e6eef6;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:20px}
+
+    /* ====== Header ====== */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo .mark{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--red));display:flex;align-items:center;justify-content:center;font-family:Orbitron,system-ui;color:white;font-weight:700}
+    .brand-logo{width:48px;height:48px;border-radius:12px;display:block;object-fit:cover}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--silver);text-decoration:none;font-weight:600}
+    .cta{background:var(--blue);color:white;padding:10px 14px;border-radius:10px;font-weight:700}
+
+    /* ====== Hero ====== */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}.hero-illus{order:-1}}
+    .hero h1{font-family:Orbitron,Inter;font-size:36px;margin:0;color:white}
+    .hero p{color:var(--muted);margin-top:12px;font-size:16px}
+    .hero .buttons{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--blue),#2a8bff);color:white}
+    .btn-outline{background:transparent;border:2px solid var(--red);color:var(--red)}
+
+    /* ====== Card grid ====== */
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+    @media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.cards{grid-template-columns:1fr}}
+    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(191,199,204,0.06)}
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* ====== How it works ====== */
+    .steps{display:flex;gap:14px;margin-top:28px}
+    @media (max-width:900px){.steps{flex-direction:column}}
+    .step{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:10px}
+
+    /* ====== Pricing ====== */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    @media (max-width:900px){.pricing{grid-template-columns:1fr}}
+    .price-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(191,199,204,0.06)}
+    .price{font-size:28px;font-weight:700}
+    .eu{color:var(--muted);font-size:14px}
+
+    /* ====== Testimonial ====== */
+    .testimonials{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+    .testimonial{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;border:1px solid rgba(191,199,204,0.04)}
+
+    /* ====== FAQ & Contact ====== */
+    .faq{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){.faq{grid-template-columns:1fr}}
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,select{background:transparent;border:1px solid rgba(191,199,204,0.06);padding:10px;border-radius:8px;color:inherit}
+    label{font-weight:600;font-size:14px}
+    .footer{margin-top:36px;padding-top:20px;border-top:1px solid rgba(191,199,204,0.04);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+    /* ====== Chatbot / Assistant ====== */
+    .assistant{position:fixed;right:20px;bottom:20px;width:320px;max-width:calc(100% - 40px);box-shadow:0 10px 30px rgba(2,6,23,0.6);border-radius:12px;background:linear-gradient(180deg,#071021, #071827);overflow:hidden;border:1px solid rgba(191,199,204,0.06)}
+    .assistant .header{display:flex;align-items:center;gap:10px;padding:10px}
+    .assistant .messages{height:260px;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
+    .msg{padding:8px 10px;border-radius:8px;max-width:80%}
+    .msg.user{align-self:flex-end;background:linear-gradient(90deg,var(--blue),#2a8bff);color:white}
+    .msg.bot{align-self:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(191,199,204,0.03)}
+    .assistant .composer{display:flex;gap:8px;padding:10px}
+    .hp{display:none}
+
+    /* ====== Animations ====== */
+    .fade-in{opacity:0;transform:translateY(6px);transition:opacity 600ms ease, transform 600ms ease}
+    .fade-in.show{opacity:1;transform:none}
+    /* lock animation */
+    .lock-wrap{width:120px;height:120px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue),var(--red));box-shadow:0 8px 30px rgba(10,116,255,0.08)}
+    .lock{width:60px;height:60px;background:#0b0f14;border-radius:6px;position:relative;border:4px solid rgba(255,255,255,0.06)}
+    .shackle{position:absolute;top:-28px;left:8px;width:44px;height:40px;border:6px solid var(--silver);border-bottom-width:0;border-radius:22px}
+    .shackle.unlock{transform:translateY(-8px) rotate(-20deg);transition:transform 700ms cubic-bezier(.2,.9,.2,1)}
+
+    /* small helpers */
+    .muted-small{color:var(--muted);font-size:13px}
+    .center{display:flex;align-items:center;justify-content:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><img class="brand-logo" src="karak-logo.png" alt="KARAK Security logo" width="48" height="48" /><div>
+        <div style="font-weight:700">KARAK</div>
+        <div class="muted-small">See beyond the threats</div>
+      </div></div>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-heading">
+        <div>
+          <h1 id="hero-heading">See beyond the threats</h1>
+          <p>Protect your business from cyber attacks with fast penetration tests, thorough audits and 24/7 monitoring. Simple process, measurable results.</p>
+          <div class="buttons">
+            <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+            <button class="btn btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Learn more</button>
+          </div>
+
+          <div class="cards" id="services" style="margin-top:22px">
+            <div class="card fade-in"><h3>Penetration Testing</h3><div class="muted">Hands-on tests to find weak spots before attackers do.</div></div>
+            <div class="card fade-in"><h3>Security Audits</h3><div class="muted">Comprehensive audits aligned with best practices and standards.</div></div>
+            <div class="card fade-in"><h3>24/7 Monitoring</h3><div class="muted">Continuous monitoring to detect anomalies and threats in real time.</div></div>
+            <div class="card fade-in"><h3>AI Risk Analysis</h3><div class="muted">AI-assisted triage to prioritise critical vulnerabilities quickly.</div></div>
+          </div>
+        </div>
+
+        <aside class="hero-illus center fade-in" aria-hidden="true">
+          <div style="text-align:center">
+            <div class="lock-wrap" id="lockWrap">
+              <div class="lock">
+                <div class="shackle" id="shackle"></div>
+              </div>
+            </div>
+            <div style="margin-top:12px;color:var(--muted)">KARAK — Trusted cybersecurity</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="about" class="fade-in" style="margin-top:20px">
+        <h2>About KARAK</h2>
+        <p class="muted">KARAK is an educational project demonstrating a modern cyber security landing page. We focus on practical, lightweight security services adapted for small and medium enterprises.</p>
+      </section>
+
+      <section class="steps" aria-label="How we work">
+        <div class="step fade-in"><strong>1. Discovery</strong><div class="muted">We map your assets and identify priorities.</div></div>
+        <div class="step fade-in"><strong>2. Testing</strong><div class="muted">Pen tests and automated scans uncover vulnerabilities.</div></div>
+        <div class="step fade-in"><strong>3. Report</strong><div class="muted">Clear remediation steps with prioritised fixes.</div></div>
+        <div class="step fade-in"><strong>4. Support</strong><div class="muted">Ongoing monitoring and incident response available.</div></div>
+      </section>
+
+      <section id="pricing" class="fade-in">
+        <h2>Pricing (EUR)</h2>
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Basic</h3>
+            <div class="price">€3,000 <span class="eu">one-off</span></div>
+            <ul class="muted-small">
+              <li>Simple vulnerability scan</li>
+              <li>Basic report</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Standard</h3>
+            <div class="price">€7,500 <span class="eu">one-off</span></div>
+            <ul class="muted-small">
+              <li>Penetration test</li>
+              <li>Detailed report & consultation</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Premium</h3>
+            <div class="price">€15,000 <span class="eu">one-off</span></div>
+            <ul class="muted-small">
+              <li>Full assessment & 6 months monitoring</li>
+              <li>Priority incident response</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted-small" style="margin-top:8px">I will add a package image later — these prices are indicative.</p>
+      </section>
+
+      <section class="testimonials fade-in">
+        <h2>Clients & Testimonials</h2>
+        <div class="testimonial">"KARAK's simulated audit helped us spot critical gaps quickly." — <strong>ACME Ltd.</strong></div>
+        <div class="testimonial">"Clear recommendations and a friendly team." — <strong>Beta Tech</strong></div>
+      </section>
+
+      <section class="faq" aria-label="FAQ and contact">
+        <div>
+          <h3>FAQ</h3>
+          <div class="muted-small"><strong>Q:</strong> How long does an engagement take?<br><strong>A:</strong> Typically 2–4 weeks depending on scope.</div>
+          <div style="height:8px"></div>
+          <div class="muted-small"><strong>Q:</strong> Are these services suitable for small businesses?<br><strong>A:</strong> Yes — the packages are tailored for SMEs.</div>
+        </div>
+
+        <div id="contact">
+          <h3>Contact</h3>
+          <form id="contactForm" onsubmit="handleContact(event)">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+            <label for="company">Company</label>
+            <input id="company" name="company" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <!-- Honeypot to deter bots -->
+            <input class="hp" name="website" id="website" autocomplete="off" />
+            <label><input type="checkbox" id="consent" required /> I consent to data processing for contact purposes (sample RODO text).</label>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <button type="submit" class="btn btn-primary">Send</button>
+              <button type="button" class="btn" onclick="downloadShortcuts()">Create desktop shortcut</button>
+            </div>
+            <div id="contactMsg" class="muted-small" style="margin-top:8px"></div>
+          </form>
+          <div style="margin-top:12px;color:var(--muted)"><strong>Phone:</strong> +48 600 000 999</div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>© <span id="year"></span> KARAK. All rights reserved.</div>
+        <div style="display:flex;gap:12px"><a href="#">Privacy</a><a href="#">Legal</a></div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Simple AI Assistant widget -->
+  <div class="assistant" role="dialog" aria-label="Cyber assistant" id="assistant">
+    <div class="header"><div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--red));display:flex;align-items:center;justify-content:center;font-weight:700">AI</div><div style="font-weight:700">KARAK Assistant</div></div>
+    <div class="messages" id="messages">
+      <div class="msg bot">Hi — ask me a basic cybersecurity question (this is a demo assistant).</div>
+    </div>
+    <div class="composer">
+      <input id="userInput" placeholder="Ask about phishing, pentests, etc." aria-label="Ask the assistant" />
+      <button onclick="sendMsg()" class="btn">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // ====== Small initialization & animations ======
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // reveal fade-in elements
+    window.addEventListener('load', ()=>{
+      document.querySelectorAll('.fade-in').forEach((el,i)=>setTimeout(()=>el.classList.add('show'), 120*i));
+      // lock animation: toggle shackle
+      setTimeout(()=>document.getElementById('shackle').classList.add('unlock'), 700);
+    });
+
+    // ====== Contact form (fake endpoint) ======
+    function handleContact(e){
+      e.preventDefault();
+      const honeypot = document.getElementById('website').value;
+      if(honeypot){document.getElementById('contactMsg').textContent='Spam detected.';return}
+      const data = {
+        name:document.getElementById('name').value,
+        email:document.getElementById('email').value,
+        company:document.getElementById('company').value,
+        message:document.getElementById('message').value,
+      };
+      // simulate sending to /api/contact
+      fetch('/api/contact', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(()=>document.getElementById('contactMsg').textContent='Thank you — we will contact you shortly.')
+      .catch(()=>document.getElementById('contactMsg').textContent='(Demo) Message queued locally.');
+    }
+
+    // ====== Simple assistant logic (demo) ======
+    const canned = [
+      {q:/phish/i,a:'Phishing is a social engineering attack... start with user training and multi-factor authentication.'},
+      {q:/pentest|penetrat/i,a:'A penetration test simulates attacks to find exploitable vulnerabilities. We recommend periodic testing.'},
+      {q:/monitor/i,a:'Monitoring 24/7 with alerting can reduce mean time to detect and respond.'},
+      {q:/ransom|ransomware/i,a:'Ransomware preparedness includes backups, segmentation and tested recovery plans.'}
+    ];
+    function sendMsg(){
+      const val = document.getElementById('userInput').value.trim();
+      if(!val) return;
+      const messages = document.getElementById('messages');
+      const u = document.createElement('div'); u.className='msg user'; u.textContent=val; messages.appendChild(u); messages.scrollTop = messages.scrollHeight;
+      // find canned
+      const found = canned.find(c=>c.q.test(val));
+      setTimeout(()=>{
+        const b = document.createElement('div'); b.className='msg bot'; b.textContent = found? found.a : 'This is a demo assistant. For deeper help, contact our team.'; messages.appendChild(b); messages.scrollTop = messages.scrollHeight;
+      },700);
+      document.getElementById('userInput').value='';
+    }
+
+    // ====== Desktop shortcut download ======
+    function downloadShortcuts(){
+      // .desktop file (Linux) content
+      const desktop = `[Desktop Entry]\nName=KARAK\nType=Application\nExec=xdg-open ${location.href}\nIcon=${location.origin}/favicon.ico\nTerminal=false\nCategories=Network;Security;`;
+      const blob = new Blob([desktop],{type:'text/plain'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'KARAK.desktop';
+      link.click();
+      URL.revokeObjectURL(link.href);
+
+      // Windows .url file
+      const urlfile = `[InternetShortcut]\nURL=${location.href}\nIconFile=${location.origin}/favicon.ico\n`;
+      const blob2 = new Blob([urlfile],{type:'text/plain'});
+      const link2 = document.createElement('a');
+      link2.href = URL.createObjectURL(blob2);
+      link2.download = 'KARAK.url';
+      link2.click();
+      URL.revokeObjectURL(link2.href);
+
+      alert('Shortcut files prepared for download (KARAK.desktop and KARAK.url). Place the .desktop file on your Linux desktop or the .url file on Windows.');
+    }
+
+    // small accessibility: press Enter to send in assistant
+    document.getElementById('userInput').addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendMsg() });
+  </script>
+</body>
+</html>
