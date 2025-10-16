@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KARAK — Cyber Security</title>
+  <meta name="description" content="KARAK — proste i skuteczne usługi cyberbezpieczeństwa: testy penetracyjne, audyty, monitoring i reagowanie na incydenty.">
+  <meta property="og:title" content="KARAK — Cyber Security" />
+  <meta property="og:description" content="Proste i skuteczne rozwiązania z zakresu cyberbezpieczeństwa dla małych i średnich firm." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1724; --accent-red:#d62828; --accent-blue:#0a74ff; --accent-silver:#c0c0c0; --muted:#98a2b3;
+      font-family: 'Orbitron', sans-serif;
+    }
+    *{box-sizing:border-box; margin:0; padding:0;}
+    body{background:linear-gradient(180deg,#070b16 0%, #0d1221 100%); color:#e6eef6; -webkit-font-smoothing:antialiased;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:20px 60px;background-color:rgba(255,255,255,0.03);border-bottom:1px solid rgba(255,255,255,0.1);}
+    header img.logo{height:60px;width:auto;transition:transform 0.3s ease;}
+    header img.logo:hover{transform:scale(1.1);}
+    nav a{color:var(--accent-silver);margin-left:24px;text-decoration:none;font-weight:500;transition:color 0.3s;}
+    nav a:hover{color:var(--accent-blue);}
+    .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 20px;}
+    .hero h1{font-size:3rem;color:var(--accent-blue);margin-bottom:20px;}
+    .hero p{max-width:600px;color:var(--accent-silver);font-size:1.2rem;}
+    .btn{display:inline-block;margin-top:30px;padding:12px 28px;border-radius:10px;text-decoration:none;color:white;background:var(--accent-red);transition:background 0.3s;}
+    .btn:hover{background:var(--accent-blue);}
+    footer{background-color:#0b1220;color:var(--accent-silver);text-align:center;padding:20px 0;margin-top:100px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo1.png" alt="KARAK logo" class="logo" />
+    </div>
+    <nav>
+      <a href="#">Strona główna</a>
+      <a href="#services">Usługi</a>
+      <a href="#pricing">Cennik</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>See Beyond the Threats</h1>
+    <p>Firma KARAK dostarcza skuteczne rozwiązania z zakresu cyberbezpieczeństwa, pomagając chronić Twoje dane i systemy przed współczesnymi zagrożeniami.</p>
+    <a href="#contact" class="btn">Skontaktuj się z nami</a>
+  </section>
+
+  <footer>
+    <p>© 2025 KARAK Cyber Security. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+</body>
+</html>
